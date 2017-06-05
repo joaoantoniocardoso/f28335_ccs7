@@ -22,6 +22,7 @@ void main(void)
         GpioDataRegs.GPBTOGGLE.bit.GPIO34 = 1;
         for(delay = 0; delay < 2000000; delay++);
     }
+
 }
 
 
