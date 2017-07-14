@@ -15,11 +15,10 @@ ORDERED_OBJS += \
 "./DSP2833x_SysCtrl.obj" \
 "./DSP2833x_usDelay.obj" \
 "./main.obj" \
+"../DSP2833x_Headers_nonBIOS.cmd" \
+"../F28335.cmd" \
 $(GEN_CMDS__FLAG) \
--llibc.a \
 -lrts2800_fpu32.lib \
--l"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/cmd/DSP2833x_Headers_nonBIOS.cmd" \
--l"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/cmd/28335_RAM_lnk.cmd" \
 
 -include ../makefile.init
 
@@ -139,14 +138,14 @@ BIN_OUTPUTS__QUOTED += \
 
 
 # All Target
-all: $(OBJS) $(GEN_CMDS)
+all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "basic_F28335.out"
 
 # Tool invocations
-basic_F28335.out: $(OBJS) $(GEN_CMDS)
+basic_F28335.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C2000 Linker'
-	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number -z -m"basic_F28335.map" --stack_size=0x300 --warn_sections -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/lib" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/cmd" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/cmd" -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="basic_F28335_linkInfo.xml" --rom_model -o "basic_F28335.out" $(ORDERED_OBJS)
+	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -Ooff --opt_for_speed=2 --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number -z -m"basic_F28335.map" --stack_size=0x300 --warn_sections -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/lib" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/cmd" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/cmd" -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="basic_F28335_linkInfo.xml" --entry_point=code_start --rom_model -o "basic_F28335.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

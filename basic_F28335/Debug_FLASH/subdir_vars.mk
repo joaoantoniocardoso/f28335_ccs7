@@ -3,6 +3,10 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../DSP2833x_Headers_nonBIOS.cmd \
+../F28335.cmd 
+
 ASM_SRCS += \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_ADC_cal.asm \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_CodeStartBranch.asm \
