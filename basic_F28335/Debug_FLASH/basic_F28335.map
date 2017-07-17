@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker Unix v16.9.1                   
 ******************************************************************************
->> Linked Fri Jul 14 15:45:56 2017
+>> Linked Mon Jul 17 16:44:01 2017
 
 OUTPUT FILE NAME:   <basic_F28335.out>
 ENTRY POINT SYMBOL: "code_start"  address: 0033fff6
@@ -25,7 +25,7 @@ PAGE 0:
   FLASHE                00318000   00008000  00000000  00008000  RWIX
   FLASHD                00320000   00008000  00000004  00007ffc  RWIX
   FLASHC                00328000   00008000  00000000  00008000  RWIX
-  FLASHA                00338000   00007f80  0000021d  00007d63  RWIX
+  FLASHA                00338000   00007f80  0000022f  00007d51  RWIX
   CSM_RSVD              0033ff80   00000076  00000000  00000076  RWIX
   BEGIN                 0033fff6   00000002  00000002  00000000  RWIX
   CSM_PWL               0033fff8   00000008  00000000  00000008  RWIX
@@ -108,11 +108,11 @@ section   page    origin      length       input sections
 ramfuncs   0    00320000    00000004     RUN ADDR = 00008000
                   00320000    00000004     DSP2833x_usDelay.obj (ramfuncs)
 
-.cinit     0    00338203    0000001a     
-                  00338203    0000000e     rts2800_fpu32.lib : exit.obj (.cinit)
-                  00338211    00000005                       : _lock.obj (.cinit:__lock)
-                  00338216    00000005                       : _lock.obj (.cinit:__unlock)
-                  0033821b    00000002     --HOLE-- [fill = 0]
+.cinit     0    00338215    0000001a     
+                  00338215    0000000e     rts2800_fpu32.lib : exit.obj (.cinit)
+                  00338223    00000005                       : _lock.obj (.cinit:__lock)
+                  00338228    00000005                       : _lock.obj (.cinit:__unlock)
+                  0033822d    00000002     --HOLE-- [fill = 0]
 
 DevEmuRegsFile 
 *          1    00000880    000000d0     UNINITIALIZED
@@ -316,18 +316,18 @@ PartIdRegsFile
 
 .pinit     0    00338000    00000000     UNINITIALIZED
 
-.text      0    00338000    00000203     
+.text      0    00338000    00000215     
                   00338000    000000f8     DSP2833x_SysCtrl.obj (.text)
                   003380f8    00000056     rts2800_fpu32.lib : boot28.obj (.text)
-                  0033814e    00000029                       : exit.obj (.text)
-                  00338177    00000024                       : cpy_tbl.obj (.text)
-                  0033819b    0000001e                       : memcpy.obj (.text)
-                  003381b9    0000001d     main.obj (.text)
-                  003381d6    00000019     rts2800_fpu32.lib : args_main.obj (.text)
-                  003381ef    00000009                       : _lock.obj (.text)
-                  003381f8    00000008     DSP2833x_CodeStartBranch.obj (.text)
-                  00338200    00000002     rts2800_fpu32.lib : pre_init.obj (.text)
-                  00338202    00000001                       : startup.obj (.text)
+                  0033814e    0000002f     main.obj (.text)
+                  0033817d    00000029     rts2800_fpu32.lib : exit.obj (.text)
+                  003381a6    00000024                       : cpy_tbl.obj (.text)
+                  003381ca    0000001e                       : memcpy.obj (.text)
+                  003381e8    00000019                       : args_main.obj (.text)
+                  00338201    00000009                       : _lock.obj (.text)
+                  0033820a    00000008     DSP2833x_CodeStartBranch.obj (.text)
+                  00338212    00000002     rts2800_fpu32.lib : pre_init.obj (.text)
+                  00338214    00000001                       : startup.obj (.text)
 
 codestart 
 *          0    0033fff6    00000002     
@@ -356,12 +356,12 @@ MODULE SUMMARY
     ./
        DSP2833x_GlobalVariableDefs.obj   0      0                  2679              
        DSP2833x_SysCtrl.obj              248    0                  0                 
-       main.obj                          29     0                  0                 
+       main.obj                          47     0                  0                 
        DSP2833x_CodeStartBranch.obj      10     0                  0                 
        DSP2833x_usDelay.obj              8      0                  0                 
        DSP2833x_ADC_cal.obj              7      0                  0                 
     +--+---------------------------------+------+------------------+--------------------+
-       Total:                            302    0                  2679              
+       Total:                            320    0                  2679              
                                                                                      
     /opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/lib/rts2800_fpu32.lib
        boot28.obj                        86     0                  0                 
@@ -377,7 +377,7 @@ MODULE SUMMARY
                                                                                      
        Stack:                            0      0                  768               
     +--+---------------------------------+------+------------------+--------------------+
-       Grand Total:                      532    24                 3457              
+       Grand Total:                      550    24                 3457              
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -488,7 +488,7 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                            
 ----  -------   ----                            
 0     00338000  .text                           
-0     0033814e  C$$EXIT                         
+0     0033817d  C$$EXIT                         
 0     00380080  _ADC_cal                        
 1     00000b00  _AdcMirror                      
 1     00007100  _AdcRegs                        
@@ -561,29 +561,31 @@ abs   ffffffff  ___TI_prof_data_size
 abs   ffffffff  ___TI_prof_data_start           
 abs   ffffffff  ___binit__                      
 abs   ffffffff  ___c_args__                     
-0     00338203  ___cinit__                      
-0     00338203  ___etext__                      
+0     00338215  ___cinit__                      
+0     00338215  ___etext__                      
 abs   ffffffff  ___pinit__                      
 0     00338000  ___text__                       
-0     003381d6  __args_main                     
+0     003381e8  __args_main                     
 1     0000c006  __lock                          
-0     003381f7  __nop                           
-0     003381f3  __register_lock                 
-0     003381ef  __register_unlock               
+0     00338209  __nop                           
+0     00338205  __register_lock                 
+0     00338201  __register_unlock               
 1     00000400  __stack                         
-0     00338202  __system_post_cinit             
-0     00338200  __system_pre_init               
+0     00338214  __system_post_cinit             
+0     00338212  __system_pre_init               
 1     0000c008  __unlock                        
-0     0033814e  _abort                          
+0     0033817d  _abort                          
+0     0033814e  _botoes_leds                    
 0     003380f8  _c_int00                        
-0     00338177  _copy_in                        
-0     00338150  _exit                           
-0     003381b9  _main                           
-0     0033819b  _memcpy                         
+0     003381a6  _copy_in                        
+0     0033817f  _exit                           
+0     00338166  _gpio_select                    
+0     00338176  _main                           
+0     003381ca  _memcpy                         
 abs   ffffffff  binit                           
-0     00338203  cinit                           
+0     00338215  cinit                           
 0     0033fff6  code_start                      
-0     00338203  etext                           
+0     00338215  etext                           
 abs   ffffffff  pinit                           
 
 
@@ -604,22 +606,24 @@ page  address   name
 0     0033806c  _InitPeripheralClocks           
 0     003380c7  _CsmUnlock                      
 0     003380f8  _c_int00                        
-0     0033814e  C$$EXIT                         
-0     0033814e  _abort                          
-0     00338150  _exit                           
-0     00338177  _copy_in                        
-0     0033819b  _memcpy                         
-0     003381b9  _main                           
-0     003381d6  __args_main                     
-0     003381ef  __register_unlock               
-0     003381f3  __register_lock                 
-0     003381f7  __nop                           
-0     00338200  __system_pre_init               
-0     00338202  __system_post_cinit             
-0     00338203  ___cinit__                      
-0     00338203  ___etext__                      
-0     00338203  cinit                           
-0     00338203  etext                           
+0     0033814e  _botoes_leds                    
+0     00338166  _gpio_select                    
+0     00338176  _main                           
+0     0033817d  C$$EXIT                         
+0     0033817d  _abort                          
+0     0033817f  _exit                           
+0     003381a6  _copy_in                        
+0     003381ca  _memcpy                         
+0     003381e8  __args_main                     
+0     00338201  __register_unlock               
+0     00338205  __register_lock                 
+0     00338209  __nop                           
+0     00338212  __system_pre_init               
+0     00338214  __system_post_cinit             
+0     00338215  ___cinit__                      
+0     00338215  ___etext__                      
+0     00338215  cinit                           
+0     00338215  etext                           
 0     0033fff6  code_start                      
 0     00380080  _ADC_cal                        
 1     00000400  __stack                         
@@ -690,4 +694,4 @@ abs   ffffffff  ___pinit__
 abs   ffffffff  binit                           
 abs   ffffffff  pinit                           
 
-[98 symbols]
+[100 symbols]
