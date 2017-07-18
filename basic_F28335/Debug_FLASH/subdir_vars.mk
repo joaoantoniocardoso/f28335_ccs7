@@ -14,6 +14,7 @@ ASM_SRCS += \
 
 C_SRCS += \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Adc.c \
+/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_DefaultIsr.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_EPwm.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/source/DSP2833x_GlobalVariableDefs.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Gpio.c \
@@ -26,6 +27,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./DSP2833x_Adc.d \
+./DSP2833x_DefaultIsr.d \
 ./DSP2833x_EPwm.d \
 ./DSP2833x_GlobalVariableDefs.d \
 ./DSP2833x_Gpio.d \
@@ -40,6 +42,7 @@ OBJS += \
 ./DSP2833x_ADC_cal.obj \
 ./DSP2833x_Adc.obj \
 ./DSP2833x_CodeStartBranch.obj \
+./DSP2833x_DefaultIsr.obj \
 ./DSP2833x_EPwm.obj \
 ./DSP2833x_GlobalVariableDefs.obj \
 ./DSP2833x_Gpio.obj \
@@ -60,6 +63,7 @@ OBJS__QUOTED += \
 "DSP2833x_ADC_cal.obj" \
 "DSP2833x_Adc.obj" \
 "DSP2833x_CodeStartBranch.obj" \
+"DSP2833x_DefaultIsr.obj" \
 "DSP2833x_EPwm.obj" \
 "DSP2833x_GlobalVariableDefs.obj" \
 "DSP2833x_Gpio.obj" \
@@ -73,6 +77,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "DSP2833x_Adc.d" \
+"DSP2833x_DefaultIsr.d" \
 "DSP2833x_EPwm.d" \
 "DSP2833x_GlobalVariableDefs.d" \
 "DSP2833x_Gpio.d" \
@@ -90,6 +95,7 @@ ASM_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Adc.c" \
+"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_DefaultIsr.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_EPwm.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/source/DSP2833x_GlobalVariableDefs.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Gpio.c" \
