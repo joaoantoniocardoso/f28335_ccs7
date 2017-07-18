@@ -21,7 +21,9 @@ ORDERED_OBJS += \
 "./DSP2833x_Xintf.obj" \
 "./DSP2833x_usDelay.obj" \
 "./main.obj" \
+"./my_buttons.obj" \
 "./my_epwm.obj" \
+"./my_leds.obj" \
 "../DSP2833x_Headers_nonBIOS.cmd" \
 "../F28335.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -165,8 +167,8 @@ basic_F28335.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "DSP2833x_ADC_cal.obj" "DSP2833x_Adc.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_DefaultIsr.obj" "DSP2833x_EPwm.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_Gpio.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_Xintf.obj" "DSP2833x_usDelay.obj" "main.obj" "my_epwm.obj" 
-	-$(RM) "DSP2833x_Adc.d" "DSP2833x_DefaultIsr.d" "DSP2833x_EPwm.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_Gpio.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "DSP2833x_Xintf.d" "main.d" "my_epwm.d" 
+	-$(RM) "DSP2833x_ADC_cal.obj" "DSP2833x_Adc.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_DefaultIsr.obj" "DSP2833x_EPwm.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_Gpio.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_Xintf.obj" "DSP2833x_usDelay.obj" "main.obj" "my_buttons.obj" "my_epwm.obj" "my_leds.obj" 
+	-$(RM) "DSP2833x_Adc.d" "DSP2833x_DefaultIsr.d" "DSP2833x_EPwm.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_Gpio.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "DSP2833x_Xintf.d" "main.d" "my_buttons.d" "my_epwm.d" "my_leds.d" 
 	-$(RM) "DSP2833x_ADC_cal.d" "DSP2833x_CodeStartBranch.d" "DSP2833x_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
