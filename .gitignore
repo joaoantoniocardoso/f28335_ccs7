@@ -1,6 +1,8 @@
 .metadata/
 .jxbrowser-data/
 .tempFiles
+*/.lauches
 dvt/
 RemoteSystemsTempFiles/
 ref/
+

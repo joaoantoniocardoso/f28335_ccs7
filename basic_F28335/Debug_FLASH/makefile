@@ -10,11 +10,16 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./DSP2833x_ADC_cal.obj" \
 "./DSP2833x_CodeStartBranch.obj" \
+"./DSP2833x_EPwm.obj" \
 "./DSP2833x_GlobalVariableDefs.obj" \
 "./DSP2833x_Gpio.obj" \
+"./DSP2833x_PieCtrl.obj" \
+"./DSP2833x_PieVect.obj" \
 "./DSP2833x_SysCtrl.obj" \
+"./DSP2833x_Xintf.obj" \
 "./DSP2833x_usDelay.obj" \
 "./main.obj" \
+"./my_epwm.obj" \
 "../DSP2833x_Headers_nonBIOS.cmd" \
 "../F28335.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -145,7 +150,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 basic_F28335.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C2000 Linker'
-	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -Ooff --opt_for_speed=2 --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number -z -m"basic_F28335.map" --stack_size=0x300 --warn_sections -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/lib" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/cmd" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/cmd" -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="basic_F28335_linkInfo.xml" --entry_point=code_start --rom_model -o "basic_F28335.out" $(ORDERED_OBJS)
+	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O4 --opt_for_speed=5 --advice:performance=all -g --diag_suppress=10063 --diag_warning=225 --diag_wrap=off --display_error_number -z -m"basic_F28335.map" --stack_size=0x300 --warn_sections -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/lib" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/cmd" -i"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/cmd" -i"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="basic_F28335_linkInfo.xml" --entry_point=code_start --rom_model -o "basic_F28335.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -158,8 +163,8 @@ basic_F28335.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "DSP2833x_ADC_cal.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_Gpio.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_usDelay.obj" "main.obj" 
-	-$(RM) "DSP2833x_GlobalVariableDefs.d" "DSP2833x_Gpio.d" "DSP2833x_SysCtrl.d" "main.d" 
+	-$(RM) "DSP2833x_ADC_cal.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_EPwm.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_Gpio.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_Xintf.obj" "DSP2833x_usDelay.obj" "main.obj" "my_epwm.obj" 
+	-$(RM) "DSP2833x_EPwm.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_Gpio.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "DSP2833x_Xintf.d" "main.d" "my_epwm.d" 
 	-$(RM) "DSP2833x_ADC_cal.d" "DSP2833x_CodeStartBranch.d" "DSP2833x_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
