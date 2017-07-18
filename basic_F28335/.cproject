@@ -102,7 +102,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="DSP2833x_MemCopy.c|DSP2833x_I2C.c|DSP2833x_EQep.c|DSP2833x_ECap.c|DSP2833x_DefaultIsr.c|DSP2833x_CpuTimers.c|DSP2833x_Adc.c|DSP2833x_SWPrioritizedPieVect.c|DSP2833x_Spi.c|DSP2833x_Sci.c|DSP2833x_ECan.c|DSP2833x_DMA.c|DSP2833x_Mcbsp.c|DSP2833x_SWPrioritizedDefaultIsr.c|28335_RAM_lnk.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="DSP2833x_MemCopy.c|DSP2833x_I2C.c|DSP2833x_EQep.c|DSP2833x_ECap.c|DSP2833x_DefaultIsr.c|DSP2833x_CpuTimers.c|DSP2833x_SWPrioritizedPieVect.c|DSP2833x_Spi.c|DSP2833x_Sci.c|DSP2833x_ECan.c|DSP2833x_DMA.c|DSP2833x_Mcbsp.c|DSP2833x_SWPrioritizedDefaultIsr.c|28335_RAM_lnk.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

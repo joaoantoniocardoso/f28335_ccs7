@@ -13,6 +13,7 @@ ASM_SRCS += \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_usDelay.asm 
 
 C_SRCS += \
+/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Adc.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_EPwm.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/source/DSP2833x_GlobalVariableDefs.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Gpio.c \
@@ -24,6 +25,7 @@ C_SRCS += \
 ../my_epwm.c 
 
 C_DEPS += \
+./DSP2833x_Adc.d \
 ./DSP2833x_EPwm.d \
 ./DSP2833x_GlobalVariableDefs.d \
 ./DSP2833x_Gpio.d \
@@ -36,6 +38,7 @@ C_DEPS += \
 
 OBJS += \
 ./DSP2833x_ADC_cal.obj \
+./DSP2833x_Adc.obj \
 ./DSP2833x_CodeStartBranch.obj \
 ./DSP2833x_EPwm.obj \
 ./DSP2833x_GlobalVariableDefs.obj \
@@ -55,6 +58,7 @@ ASM_DEPS += \
 
 OBJS__QUOTED += \
 "DSP2833x_ADC_cal.obj" \
+"DSP2833x_Adc.obj" \
 "DSP2833x_CodeStartBranch.obj" \
 "DSP2833x_EPwm.obj" \
 "DSP2833x_GlobalVariableDefs.obj" \
@@ -68,6 +72,7 @@ OBJS__QUOTED += \
 "my_epwm.obj" 
 
 C_DEPS__QUOTED += \
+"DSP2833x_Adc.d" \
 "DSP2833x_EPwm.d" \
 "DSP2833x_GlobalVariableDefs.d" \
 "DSP2833x_Gpio.d" \
@@ -83,11 +88,8 @@ ASM_DEPS__QUOTED += \
 "DSP2833x_CodeStartBranch.d" \
 "DSP2833x_usDelay.d" 
 
-ASM_SRCS__QUOTED += \
-"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_CodeStartBranch.asm" \
-"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_usDelay.asm" 
-
 C_SRCS__QUOTED += \
+"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Adc.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_EPwm.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/source/DSP2833x_GlobalVariableDefs.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Gpio.c" \
@@ -97,5 +99,9 @@ C_SRCS__QUOTED += \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Xintf.c" \
 "../main.c" \
 "../my_epwm.c" 
+
+ASM_SRCS__QUOTED += \
+"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_CodeStartBranch.asm" \
+"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_usDelay.asm" 
 
 
