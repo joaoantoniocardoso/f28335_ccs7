@@ -32,8 +32,8 @@ extern "C" {
 //
 // PHSEN bit
 //
-#define	TB_DISABLE		0x0
-#define	TB_ENABLE		0x1
+#define	TB_DISABLE		0b0 //0x0
+#define	TB_ENABLE		0b1 //0x1
 
 //
 // PRDLD bit
