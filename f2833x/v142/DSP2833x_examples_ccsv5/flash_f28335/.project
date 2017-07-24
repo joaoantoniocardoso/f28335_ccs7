@@ -7,6 +7,7 @@
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -88,16 +89,16 @@
 	</linkedResources>
 	<variableList>
 		<variable>
+			<name>INSTALLROOT_2833X_V142</name>
+			<value>$%7BPARENT-2-PROJECT_LOC%7D</value>
+		</variable>
+		<variable>
 			<name>INSTALLROOT_FASTRTS_V100</name>
 			<value>$%7BPARENT-5-PROJECT_LOC%7D/libs/math/FPUfastRTS/V100</value>
 		</variable>
 		<variable>
 			<name>INSTALLROOT_IQMATH_V15c</name>
 			<value>$%7BPARENT-5-PROJECT_LOC%7D/libs/math/IQmath/v15c</value>
-		</variable>
-		<variable>
-			<name>INSTALLROOT_2833X_V142</name>
-			<value>$%7BPARENT-2-PROJECT_LOC%7D</value>
 		</variable>
 	</variableList>
 </projectDescription>

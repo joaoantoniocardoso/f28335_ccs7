@@ -24,6 +24,13 @@ DSP2833x_CodeStartBranch.obj: /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v
 	@echo 'Finished building: $<'
 	@echo ' '
 
+DSP2833x_CpuTimers.obj: /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_CpuTimers.c $(GEN_OPTS) | $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O3 --opt_for_speed=5 --include_path="/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --include_path="/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/include" --include_path="/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/include" --advice:performance=all -g --diag_suppress=10063 --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="DSP2833x_CpuTimers.d" --verbose $(GEN_OPTS__FLAG) "$(shell echo $<)"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 DSP2833x_DefaultIsr.obj: /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_DefaultIsr.c $(GEN_OPTS) | $(GEN_HDRS)
 	@echo 'Building file: $<'
 	@echo 'Invoking: C2000 Compiler'
@@ -91,6 +98,13 @@ main.obj: ../main.c $(GEN_OPTS) | $(GEN_HDRS)
 	@echo 'Building file: $<'
 	@echo 'Invoking: C2000 Compiler'
 	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O3 --opt_for_speed=5 --include_path="/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --include_path="/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/include" --include_path="/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/include" --advice:performance=all -g --diag_suppress=10063 --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d" --verbose $(GEN_OPTS__FLAG) "$(shell echo $<)"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+my_adc.obj: ../my_adc.c $(GEN_OPTS) | $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 -O3 --opt_for_speed=5 --include_path="/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.1.LTS/include" --include_path="/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/include" --include_path="/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_headers/include" --advice:performance=all -g --diag_suppress=10063 --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="my_adc.d" --verbose $(GEN_OPTS__FLAG) "$(shell echo $<)"
 	@echo 'Finished building: $<'
 	@echo ' '
 

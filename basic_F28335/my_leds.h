@@ -8,10 +8,10 @@
  *
  */
 
-#include "DSP28x_Project.h"
-
 #ifndef MY_LEDS_H_
 #define MY_LEDS_H_
+
+#include "DSP28x_Project.h"
 
 #define led1_clear   GpioDataRegs.GPBCLEAR.bit.GPIO48
 #define led1_set     GpioDataRegs.GPBSET.bit.GPIO48

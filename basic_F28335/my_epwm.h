@@ -8,10 +8,10 @@
  *
  */
 
-#include "DSP28x_Project.h"
-
 #ifndef MY_EPWM_H_
 #define MY_EPWM_H_
+
+#include "DSP28x_Project.h"
 
 void my_epwm_init(void);
 

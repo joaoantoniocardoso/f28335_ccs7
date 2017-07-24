@@ -38,12 +38,12 @@ void my_epwm_init(void)
     epwm6_set_ph(0);
 
     // set duty cycle
-    epwm1_set_dt(750);
-    epwm2_set_dt(750);
-    epwm3_set_dt(750);
-    epwm4_set_dt(750);
-    epwm5_set_dt(750);
-    epwm6_set_dt(750);
+    epwm1_set_dt(0);
+    epwm2_set_dt(0);
+    epwm3_set_dt(0);
+    epwm4_set_dt(0);
+    epwm5_set_dt(0);
+    epwm6_set_dt(0);
 
 }
 
@@ -79,7 +79,7 @@ void MyInitEPwmGpio(void)
  */
 void InitEPwm1(void)
 {
-    EPwm1Regs.TBPRD = 1500;                         // Period = 2*1500 TBCLK counts
+    EPwm1Regs.TBPRD = 1500;                         // Period = 2 x 1500 TBCLK counts
     EPwm1Regs.CMPA.half.CMPA = 0;                   // Init with duty cycle = 0
     EPwm1Regs.TBPHS.all = 0;                        // Set Phase register to zero
     EPwm1Regs.TBCTR = 0;                            // clear TB counter
@@ -93,8 +93,13 @@ void InitEPwm1(void)
     EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR = Zero
     EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR = Zero
-    EPwm1Regs.AQCTLA.bit.CAU = AQ_SET;
-    EPwm1Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm1Regs.AQCTLA.bit.CAD = AQ_SET;
+    // Deadband config:
+    //EPwm1Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;  // enable Dead-band module
+    //EPwm1Regs.DBCTL.bit.POLSEL = DB_ACTV_HIC;       // Active Hi complementary
+    //EPwm1Regs.DBFED = 50; // FED = 50 TBCLKs
+    //EPwm1Regs.DBRED = 50; // RED = 50 TBCLKs
 }
 
 /**
@@ -121,8 +126,8 @@ void InitEPwm2(void)
     EPwm2Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm2Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR = Zero
     EPwm2Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR = Zero
-    EPwm2Regs.AQCTLA.bit.CAU = AQ_SET;
-    EPwm2Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    EPwm2Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm2Regs.AQCTLA.bit.CAD = AQ_SET;
 }
 
 /**
@@ -149,8 +154,8 @@ void InitEPwm3(void)
     EPwm3Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm3Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR = Zero
     EPwm3Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR = Zero
-    EPwm3Regs.AQCTLA.bit.CAU = AQ_SET;
-    EPwm3Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    EPwm3Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm3Regs.AQCTLA.bit.CAD = AQ_SET;
 }
 /**
  * @brief PWM configurado como up-down-count, dual-edge symmetric,
@@ -176,8 +181,8 @@ void InitEPwm4(void)
     EPwm4Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm4Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR = Zero
     EPwm4Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR = Zero
-    EPwm4Regs.AQCTLA.bit.CAU = AQ_SET;
-    EPwm4Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    EPwm4Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm4Regs.AQCTLA.bit.CAD = AQ_SET;
 }
 
 /**
@@ -204,8 +209,8 @@ void InitEPwm5(void)
     EPwm5Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm5Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR = Zero
     EPwm5Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR = Zero
-    EPwm5Regs.AQCTLA.bit.CAU = AQ_SET;
-    EPwm5Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    EPwm5Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm5Regs.AQCTLA.bit.CAD = AQ_SET;
 }
 
 /**
@@ -232,6 +237,6 @@ void InitEPwm6(void)
     EPwm6Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm6Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR = Zero
     EPwm6Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR = Zero
-    EPwm6Regs.AQCTLA.bit.CAU = AQ_SET;
-    EPwm6Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    EPwm6Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm6Regs.AQCTLA.bit.CAD = AQ_SET;
 }
