@@ -80,9 +80,7 @@ void botoes_leds(void)
     }
 
     // aplica dutycycle nos epwms 1 e 2
-    //epwm1_set_dt(dt);
-    //epwm2_set_dt(dt);
-    EPwm1Regs.CMPA.half.CMPA = 750;
-    EPwm2Regs.CMPA.half.CMPA = 750;
+    epwm1_set_dt(dt);
+    epwm2_set_dt(dt);
 
 }
