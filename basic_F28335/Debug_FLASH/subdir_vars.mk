@@ -21,13 +21,15 @@ C_SRCS += \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Gpio.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_PieCtrl.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_PieVect.c \
+/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Sci.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_SysCtrl.c \
 /home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Xintf.c \
 ../main.c \
 ../my_adc.c \
 ../my_buttons.c \
 ../my_epwm.c \
-../my_leds.c 
+../my_leds.c \
+../my_scia.c 
 
 C_DEPS += \
 ./DSP2833x_Adc.d \
@@ -38,13 +40,15 @@ C_DEPS += \
 ./DSP2833x_Gpio.d \
 ./DSP2833x_PieCtrl.d \
 ./DSP2833x_PieVect.d \
+./DSP2833x_Sci.d \
 ./DSP2833x_SysCtrl.d \
 ./DSP2833x_Xintf.d \
 ./main.d \
 ./my_adc.d \
 ./my_buttons.d \
 ./my_epwm.d \
-./my_leds.d 
+./my_leds.d \
+./my_scia.d 
 
 OBJS += \
 ./DSP2833x_ADC_cal.obj \
@@ -57,6 +61,7 @@ OBJS += \
 ./DSP2833x_Gpio.obj \
 ./DSP2833x_PieCtrl.obj \
 ./DSP2833x_PieVect.obj \
+./DSP2833x_Sci.obj \
 ./DSP2833x_SysCtrl.obj \
 ./DSP2833x_Xintf.obj \
 ./DSP2833x_usDelay.obj \
@@ -64,7 +69,8 @@ OBJS += \
 ./my_adc.obj \
 ./my_buttons.obj \
 ./my_epwm.obj \
-./my_leds.obj 
+./my_leds.obj \
+./my_scia.obj 
 
 ASM_DEPS += \
 ./DSP2833x_ADC_cal.d \
@@ -82,6 +88,7 @@ OBJS__QUOTED += \
 "DSP2833x_Gpio.obj" \
 "DSP2833x_PieCtrl.obj" \
 "DSP2833x_PieVect.obj" \
+"DSP2833x_Sci.obj" \
 "DSP2833x_SysCtrl.obj" \
 "DSP2833x_Xintf.obj" \
 "DSP2833x_usDelay.obj" \
@@ -89,7 +96,8 @@ OBJS__QUOTED += \
 "my_adc.obj" \
 "my_buttons.obj" \
 "my_epwm.obj" \
-"my_leds.obj" 
+"my_leds.obj" \
+"my_scia.obj" 
 
 C_DEPS__QUOTED += \
 "DSP2833x_Adc.d" \
@@ -100,13 +108,15 @@ C_DEPS__QUOTED += \
 "DSP2833x_Gpio.d" \
 "DSP2833x_PieCtrl.d" \
 "DSP2833x_PieVect.d" \
+"DSP2833x_Sci.d" \
 "DSP2833x_SysCtrl.d" \
 "DSP2833x_Xintf.d" \
 "main.d" \
 "my_adc.d" \
 "my_buttons.d" \
 "my_epwm.d" \
-"my_leds.d" 
+"my_leds.d" \
+"my_scia.d" 
 
 ASM_DEPS__QUOTED += \
 "DSP2833x_ADC_cal.d" \
@@ -127,12 +137,14 @@ C_SRCS__QUOTED += \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Gpio.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_PieCtrl.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_PieVect.c" \
+"/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Sci.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_SysCtrl.c" \
 "/home/joaoantoniocardoso/workspace_CUKPFC/f2833x/v142/DSP2833x_common/source/DSP2833x_Xintf.c" \
 "../main.c" \
 "../my_adc.c" \
 "../my_buttons.c" \
 "../my_epwm.c" \
-"../my_leds.c" 
+"../my_leds.c" \
+"../my_scia.c" 
 
 

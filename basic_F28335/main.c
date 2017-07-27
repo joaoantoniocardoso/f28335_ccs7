@@ -14,12 +14,16 @@
 #include "my_buttons.h"
 #include "my_leds.h"
 #include "my_adc.h"
+#include "my_scia.h"
 
 //#include "my_epwm_example.h"
 #include "my_epwm.h"
 
+#define MY_DEBUG_
+
 Uint32 dt = 0;
 
+void serial_debug(void);
 void botoes_leds(void);
 
 void main(void)
@@ -45,15 +49,38 @@ void main(void)
     my_epwm_init();
     my_adc_init();
 
+#ifdef MY_DEBUG_
+    my_scia_init();
+#endif
+
     // Enable global Interrupts and higher priority real-time debug events:
     EINT;   // Enable Global interrupt INTM
     ERTM;   // Enable Global realtime interrupt DBGM
 
     for(;;){
         botoes_leds();
+
+#ifdef MY_DEBUG_
+        serial_debug();
+#endif
+
         DELAY_US(2500);
     }
 
+}
+
+/**
+ * @brief envia dados de debug via serial
+ */
+void serial_debug(void)
+{
+    my_scia_send_string("dt: ");
+    my_scia_send_uint16(dt);
+    my_scia_send_string("\tADC0: ");
+    my_scia_send_uint16(AdcRegs.ADCRESULT0);
+    my_scia_send_string("\tADC1: ");
+    my_scia_send_uint16(AdcRegs.ADCRESULT1);
+    my_scia_send_string("\r\n");
 }
 
 /**
