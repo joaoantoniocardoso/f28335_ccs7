@@ -6,6 +6,7 @@
 dvt/
 RemoteSystemsTempFiles/
 ref/
+*.opt
 
 # Created by https://www.gitignore.io/api/c,eclipse
 
