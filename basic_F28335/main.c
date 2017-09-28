@@ -16,6 +16,7 @@
 #include "my_adc.h"
 #include "my_epwm.h"
 #include "my_scia.h"
+#include "my_sinc.h"
 
 #define MY_DEBUG_
 
@@ -24,6 +25,7 @@ Uint32 dt = 0;
 
 void serial_debug(void);
 void botoes_leds(void);
+inline void sinc(void);
 
 void main(void)
 {
@@ -44,6 +46,7 @@ void main(void)
     InitPieVectTable();
 
     my_buttons_init();
+    my_sinc_init();
     my_leds_init();
     my_epwm_init();
     my_adc_init();
@@ -57,15 +60,32 @@ void main(void)
     ERTM;   // Enable Global realtime interrupt DBGM
 
     for(;;){
-        botoes_leds();
+        //botoes_leds();
 
 #ifdef MY_DEBUG_
         serial_debug();
 #endif
 
+        sinc();
+
         DELAY_US(2500);
     }
 
+}
+
+/**
+ * @brief utiliza o sinal de sincronismo para ligar um led (utilizado para teste)
+ */
+inline void sinc(void)
+{
+    if(sinc1) led1_set = 1;
+    else led1_clear = 1;
+
+    if(sinc2) led2_set = 1;
+    else led2_clear = 1;
+
+    if(sinc3) led3_set = 1;
+    else led3_clear = 1;
 }
 
 /**
