@@ -34,13 +34,14 @@ void my_adc_init(void)
     AdcRegs.ADCTRL3.bit.SMODE_SEL = 0;      // Sequential sampling mode is selected.
     AdcRegs.ADCREFSEL.bit.REF_SEL = 0;      // Internal reference selected (default)
     // SEQ1 config:
-    AdcRegs.ADCMAXCONV.bit.MAX_CONV1 = 1;   // Setup 2 conv's on SEQ1
+    AdcRegs.ADCMAXCONV.bit.MAX_CONV1 = 4;   // Setup 2 conv's on SEQ1
     AdcRegs.ADCCHSELSEQ1.bit.CONV00 = 0x0;  // Setup ADCINA1 as 1st SEQ1 conv.
     AdcRegs.ADCCHSELSEQ1.bit.CONV01 = 0x1;  // Setup ADCINA2 as 2nd SEQ1 conv.
+    AdcRegs.ADCCHSELSEQ1.bit.CONV02 = 0x2;  // Setup ADCINA3 as 3nd SEQ1 conv.
+    AdcRegs.ADCCHSELSEQ1.bit.CONV03 = 0x3;  // Setup ADCINA4 as 4nd SEQ1 conv.
     AdcRegs.ADCTRL2.bit.INT_MOD_SEQ1 = 0;   // INT_SEQ1 is set at the end of every SEQ1 sequence.
     AdcRegs.ADCTRL2.bit.SOC_SEQ1 = 0 ;      // Clears a pending SOC trigger for SEQ1.
     AdcRegs.ADCTRL2.bit.INT_ENA_SEQ1 = 1;   // Interrupt request by INT_SEQ1 is enabled.
-
 
     InitCpuTimers();                            // Basic Timers setup
     ConfigCpuTimer(&CpuTimer0, 150, 100000);;   //100 for 10kHz
@@ -66,8 +67,6 @@ void my_adc_init(void)
 
 __interrupt void adc_isr(void)
 {
-
-
 
     // Reinitialize for next ADC sequence
     AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;       // Reset SEQ1 to state CONV00
