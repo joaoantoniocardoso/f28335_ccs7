@@ -23,29 +23,25 @@ void my_scia_send_string(const char *s)
 }
 
 /**
- * @brief Sends an unsigned int (Uint16) through serial.
+ * @brief Sends a zero filled Uint16 through serial.
  */
 void my_scia_send_uint16(Uint16 num)
 {
-    #define MAX_LEN         6   // "65536" is 6 characters with NULL terminator
-    #define BASE_10         10  // decimal base
+    #define LEN      6              // length of the string w/ null terminator
+    #define BASE    10              // string as a decimal base
 
-    unsigned char index = MAX_LEN - 1;
-    char str[ MAX_LEN ];
+    unsigned char i = LEN -1;       // index for each char of the string
+    char str[LEN] = {'0'};          // ascii zero filled array
+    str[i] = '\0';                  // adds string null terminator
 
-    str[index] = '\0';          // adds null terminator
-    while(index--){
-        str[index] = (num % BASE_10) + '0';     // gets each algarism
-        num /= BASE_10;                         // prepare the next
-
-        if(!num){                               // finished
-            my_scia_send_string(&str[index]);
-            break;
-        }
+    while(i--){
+        str[i] = '0' + (num % BASE);// gets each algarism
+        num /= BASE;                // prepare the next
     }
+    my_scia_send_string(str);       // sends the string
 
-    #undef MAX_LEN
-    #undef BASE_10
+    #undef LEN
+    #undef BASE
 }
 
 /**
