@@ -14,13 +14,12 @@
 #include "my_buttons.h"
 #include "my_leds.h"
 #include "my_adc.h"
-#include "my_scia.h"
-
-//#include "my_epwm_example.h"
 #include "my_epwm.h"
+#include "my_scia.h"
 
 #define MY_DEBUG_
 
+// Variáveis globais
 Uint32 dt = 0;
 
 void serial_debug(void);
@@ -80,6 +79,10 @@ void serial_debug(void)
     my_scia_send_uint16(AdcRegs.ADCRESULT0);
     my_scia_send_string("\tADC1: ");
     my_scia_send_uint16(AdcRegs.ADCRESULT1);
+    my_scia_send_string("\tADC2: ");
+    my_scia_send_uint16(AdcRegs.ADCRESULT2);
+    my_scia_send_string("\tADC3: ");
+    my_scia_send_uint16(AdcRegs.ADCRESULT3);
     my_scia_send_string("\r\n");
 }
 
