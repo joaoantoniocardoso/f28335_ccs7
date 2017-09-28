@@ -1,3 +1,15 @@
+# Others
+.metadata/
+.jxbrowser-data/
+.tempFiles/
+.lauches/
+dvt/
+RemoteSystemsTempFiles/
+ref/
+
+# Created by https://www.gitignore.io/api/c,eclipse
+
+### C ###
 # Prerequisites
 *.d
 
@@ -6,7 +18,6 @@
 *.ko
 *.obj
 *.elf
-*.opt
 
 # Linker output
 *.ilk
@@ -16,6 +27,12 @@
 # Precompiled Headers
 *.gch
 *.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
 
 # Shared objects (inc. Windows DLLs)
 *.dll
@@ -37,12 +54,72 @@
 *.idb
 *.pdb
 
-# Others
-.metadata/
-.jxbrowser-data/
-.tempFiles/
-.lauches/
-dvt/
-RemoteSystemsTempFiles/
-ref/
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
 
+### Eclipse ###
+
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+### Eclipse Patch ###
+# Eclipse Core		
+.project
+
+# JDT-specific (Eclipse Java Development Tools)		
+.classpath
+
+# End of https://www.gitignore.io/api/c,eclipse
